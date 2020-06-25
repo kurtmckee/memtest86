@@ -1,5 +1,8 @@
 #!/bin/sh
 
+VERSION=$(grep -Po "(?<=Memtest86) +[1-9]\.[0-9]+[a-z]*" init.c | tr -d " ")
+VERSION_FILENAME=$(echo ${VERSION} | tr --delete ".")
+
 # check to see if the correct tools are installed
 for X in wc genisoimage
 do
@@ -9,12 +12,12 @@ do
 	elif [ ! -x $(which $X) ]; then
 		echo "makeiso.sh error: $X is not executable." >&2
 		exit 1
-	fi 
+	fi
 done
 
 #check to see if memtest.bin is present
-if [ ! -w memtest.bin ]; then 
-	echo "makeiso.sh error: cannot find memtest.bin, did you compile it?" >&2 
+if [ ! -w memtest.bin ]; then
+	echo "makeiso.sh error: cannot find memtest.bin, did you compile it?" >&2
 	exit 1
 fi
 
@@ -37,9 +40,9 @@ cd cd
 echo -e "There is nothing to do here\r\r\nMemtest86+ is located on the bootsector of this CD\r\r\n" > README.TXT
 echo -e "Just boot from this CD and Memtest86+ will launch" >> README.TXT
 
-genisoimage -A "MKISOFS 1.1.2" -p "Memtest86+ 5.31b" -publisher "Samuel D. <memtest@memtest.org>" -b boot/memtest.img -c boot/boot.catalog -V "MT531" -o memtest.iso .
-mv memtest.iso ../mt531b.iso
+genisoimage -A "MKISOFS 1.1.2" -p "Memtest86+ ${VERSION}" -publisher "Samuel D. <memtest@memtest.org>" -b boot/memtest.img -c boot/boot.catalog -V "MT${VERSION_FILENAME}" -o memtest.iso .
+mv memtest.iso ../mt${VERSION_FILENAME}.iso
 cd ..
 rm -rf cd
 
-echo "Done! Memtest86+ 5.31b ISO is mt501.iso"
+echo "Done! Memtest86+ ${VERSION} ISO is mt${VERSION_FILENAME}.iso"
