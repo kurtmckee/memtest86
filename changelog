@@ -1,25 +1,167 @@
-Memtest86+ V5.01 changelog
-----------------------------
+Memtest86+ 5.31b changelog
+--------------------------
 
-	- Added support for up to 2 TB of RAM on X64 CPUs
-	- Added experimental SMT support up to 32 cores
-	- Added complete detection for memory controllers.
-	- Added Motherboard Manufacturer & Model reporting
-	- Added CPU temperature reporting
-	- Added enhanced Fail Safe Mode (Press F1 at startup)
-	- Added support for Intel "Sandy Bridge-E" CPUs
-	- Added support for Intel "Ivy Bridge" CPUs
-	- Added preliminary support for Intel "Haswell" CPUs
-	- Added preliminary support for Intel "Haswell-ULT" CPUs
-	- Added support for AMD "Kabini" (K16) CPUs
-	- Added support for AMD "Bulldozer" CPUs
-	- Added support for AMD "Trinity" CPUs
-	- Added support for AMD E-/C-/G-/Z- "Bobcat" CPUs
-	- Added support for Intel Atom "Pineview" CPUs
-	- Added support for Intel Atom "Cedar Trail" CPUs
-	- Added SPD detection on most AMD Chipsets
-	- Enforced Coreboot support
-	- Optimized run time for faster memory error detection
-	- Rewriten lots of memory timings detection code
-	- Corrected bugs, bugs and more bugs
-	
+*No changes noted*
+
+
+
+Memtest86+ V5.01 changelog
+--------------------------
+
+- Added support for up to 2 TB of RAM on X64 CPUs
+- Added experimental SMT support up to 32 cores
+- Added complete detection for memory controllers.
+- Added Motherboard Manufacturer & Model reporting
+- Added CPU temperature reporting
+- Added enhanced Fail Safe Mode (Press F1 at startup)
+- Added support for Intel "Sandy Bridge-E" CPUs
+- Added support for Intel "Ivy Bridge" CPUs
+- Added preliminary support for Intel "Haswell" CPUs
+- Added preliminary support for Intel "Haswell-ULT" CPUs
+- Added support for AMD "Kabini" (K16) CPUs
+- Added support for AMD "Bulldozer" CPUs
+- Added support for AMD "Trinity" CPUs
+- Added support for AMD E-/C-/G-/Z- "Bobcat" CPUs
+- Added support for Intel Atom "Pineview" CPUs
+- Added support for Intel Atom "Cedar Trail" CPUs
+- Added SPD detection on most AMD Chipsets
+- Enforced Coreboot support
+- Optimized run time for faster memory error detection
+- Rewriten lots of memory timings detection code
+- Corrected bugs, bugs and more bugs
+
+
+
+Memtest86+ V4.20 changelog
+--------------------------
+
+- Added failsafe mode (F1 at startup)
+- Added support for Intel "Sandy Bridge" CPU
+- Added support for AMD "fusion" CPU
+- Added Coreboot "table forward" support
+- Corrected some memory brand not detected
+- Various bug fixes
+
+
+
+Memtest86+ V4.10 changelog
+--------------------------
+
+- Added support for Core i7 Extreme CPU (32nm)
+- Added support for Core i5/i3 (32 nm)
+- Added support for Pentium Gxxxx (32 mn)
+- Added support for Westmere-based Xeon
+- Added preliminary support for Intel Sandy Bridge
+- Added support for AMD 6-cores CPU
+- Added detection for Intel 3200/3210
+- Many bug fixes
+
+
+
+Memtest86+ V4.00 changelog
+--------------------------
+
+- Major Architectural changes
+- First pass twice faster (reduced iterations)
+- Detect DDR2/3 brands and part numbers
+- Corrected detection for Intel "Lynnfield" CPU
+- Added detection for Intel "Clarkdale" CPU
+- Added detection for Intel "Gulftown" CPU
+- Corrected detection for AMD 45nm K10 CPU
+- Added detection for AMD "Magny-Cours" CPU
+- Solved crash with AMD Geode LX
+- Added detection for Intel XMP Memory
+- Added for CPU w/ 0.5/1.5/3/6/12/16/18/24MB L3
+- Added "clean" DMI detection for DDR3/FBDIMM2 
+- Better detection of Integrated Memory Ctrl
+- Complies with SMBIOS 2.6.1 specs
+- Fixed compilation issues with gcc 4.2+
+- Many others bug fixes
+
+
+
+Memtest86+ V2.11 changelog
+--------------------------
+
+- Added support for Intel Core i5 (Lynnfield) CPU
+- Added support for Intel P55 Southbridge
+- Added support for Intel PM45/GM45/GM47 Mobile chipset
+- Added support for Intel GL40/GS45 Mobile chipset
+- Corrected DDR2/DDR3 detection on Intel x35/x45
+- Corrected detection on some Core i7 CPU 
+- Various bug fixes
+
+
+
+Memtest86+ V2.10 changelog
+--------------------------
+
+- Added support for Intel Core i7 (Nehalem) CPU
+- Added support for Intel Atom Processors
+- Added support for Intel G41/G43/G45 Chipsets
+- Added support for Intel P43/P45 Chipsets
+- Added support for Intel US15W (Poulsbo) Chipset
+- Added support for Intel EP80579 (Tolapai) SoC CPU
+- Added support for ICH10 Southbridge (SPD/DMI)
+- Added detection for Intel 5000X
+- Added workaround for DDR3 DMI detection
+- Now fully aware of CPU w/ L3 cache (Core i7 & K10)
+- Fixed Intel 5000Z chipset detection
+- Fixed Memory Frequency on AMD K10
+- Fixed cache detection on C7/Isaiah CPU
+- Fix Memtest86+ not recognized as Linux Kernel
+
+Warning : GCC 4.2+ is not yet supported. Thanks to the new pointers over/underflows limitations 
+introduced with that version ! Memtest86+ compiled with GCC 4.2+ will result in a non-working 
+binary (hangs in the first seconds). We're working on a fix but there is really many parts of
+the code to check & change everywhere. So, please use GCC 4.1 instead.
+
+
+
+Memtest86+ V2.01 changelog
+--------------------------
+
+- Solved a major bug in Memory Address Errors Reporting
+- Patched for Intel-Powered Mac
+- Pass duration 20% reduced 
+- Solved a incoherency with pass progress indicator
+- Patched Makefile to compile on x86_64
+- Added support for 45 nm Mobile Core 2 w/ 3 Mo L2
+- Corrected Intel 3-Series (P35/X38) chipset init 
+- Corrected a bug with SPD Display and ESB6300
+- Correct a detection bug on P965/G965 C-Stepping
+- Added support for i945GM/PM/GME & i946PL/GZ
+- Added support for iGM965/iGL960/iPM965/iGME965/iGLE960
+- Added detection for SiS 649/656/671/672
+- Added detection for i430MX/i430TX
+- Added an optional beep mode (pass completed w/o error)
+- Removed the blinking cursor
+- Bootable Memtest86+ ISO more compatible
+- Reverted Test #0 to cached
+
+
+
+Memtest86+ V2.00 changelog
+--------------------------
+
+- Major Architectures changes
+- Modulo test now use random pattern for better accuracy
+- Added Advanced DMI Errors Reporting Mode
+- Added support for bus ratio changes on Intel Core CPU
+- Added support for non-integer bus ratio on latest Intel CPU
+- Added SPD Data Display for all Intel Chipsets (more to come)
+- Added serial support as a linux boot parameter (Thanks to Michal S.)
+- Added preliminary support for VIA CN Isaiah CPU
+- Added preliminary support for Intel Nehalem
+- Adedd support for VIA C7/C7-D/C7-M/Eden on Esther Core
+- Added support for AMD K10 (Phenom) CPU w/ timings detection
+- Added support for Intel Pentium E w/ 1 MB L2 Cache
+- Added support for Intel Core 2 45nm (Penryn)
+- Added support for FSB1333/FSB1600 Intel CPU
+- Added support for Intel 5400A/5400B w/ timings detection
+- Added support for Intel Q35/P35/G33/Q33 w/ timings detection
+- Added support for Intel X38/X48 w/ timings detection
+- Added preliminary support for Intel 5000P/V/Z
+- Removed on-fly memory timings change (unstable)
+- Numerous (really) bug fixes
+
