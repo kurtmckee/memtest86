@@ -1,0 +1,14 @@
+# memtest86 files
+
+memtest
+memtest.bin
+memtest_shared
+memtest_shared.bin
+*.iso
+cd/
+
+
+# Standard compiled files
+
+*.o
+*.s
